@@ -1,1 +1,1 @@
-bot: python run.py
+bot: python run.py --no-checks
