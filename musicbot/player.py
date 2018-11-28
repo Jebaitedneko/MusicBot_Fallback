@@ -322,10 +322,10 @@ class MusicPlayer(EventEmitter, Serializable):
                 if self.bot.config.use_experimental_equalization and not isinstance(entry, StreamPlaylistEntry):
                     mean, maximum = self.get_mean_volume(entry.filename)
                     
-                    aoptions = '-af "volume={}dB"'.format((maximum * -1))
+                    aoptions = '-af "volume={}dB" -b:a 320k'.format((maximum * -1))
                     
                 else:
-                    aoptions = "-vn"
+                    aoptions = "-vn -b:a 320k"
                 
                 log.ffmpeg("Creating player with options: {} {} {}".format(boptions, aoptions, entry.filename))
 
