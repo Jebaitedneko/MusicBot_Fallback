@@ -267,7 +267,7 @@ class MusicPlayer(EventEmitter, Serializable):
 
     def get_mean_volume(self, input_file):
         log.debug('Calculating mean volume of {0}'.format(input_file))
-        cmd = '"' + self.get('ffmpeg') + '" -i "' + input_file + '" -af "dynaudnorm" -f null /dev/null'
+        cmd = '"' + self.get('ffmpeg') + '" -i "' + input_file + '" -af "volumedetect" -f null /dev/null'
         # print('===', cmd)
         try:
             output = self.run_command(cmd)
