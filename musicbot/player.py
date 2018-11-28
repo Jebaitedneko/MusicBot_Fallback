@@ -267,7 +267,7 @@ class MusicPlayer(EventEmitter, Serializable):
 
     def get_mean_volume(self, input_file):
         log.debug('Calculating mean volume of {0}'.format(input_file))
-        cmd = '"' + self.get('ffmpeg') + '" -i "' + input_file + '" -af "volumedetect" -f null /dev/null'
+        cmd = '"' + self.get('ffmpeg') + '" -i "' + input_file + '" -af "dynaudnorm" -f null /dev/null'
         # print('===', cmd)
         try:
             output = self.run_command(cmd)
@@ -318,7 +318,7 @@ class MusicPlayer(EventEmitter, Serializable):
                 self._kill_current_player()
 
                 boptions = "-nostdin"
-                # aoptions = "-vn -b:a 192k"
+                aoptions = "-vn -b:a 320k"
                 if self.bot.config.use_experimental_equalization and not isinstance(entry, StreamPlaylistEntry):
                     mean, maximum = self.get_mean_volume(entry.filename)
                     
