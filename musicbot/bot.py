@@ -873,7 +873,7 @@ class MusicBot(discord.Client):
     @ensure_appinfo
     async def _on_ready_sanity_checks(self):
         # Ensure folders exist
-        await self._scheck_ensure_env()
+        #await self._scheck_ensure_env()
 
         # Server permissions check
         await self._scheck_server_permissions()
