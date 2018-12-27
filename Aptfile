@@ -1,2 +1,2 @@
-libopus0
-http://ftp.us.debian.org/debian/pool/main/o/opus/libopus0_1.3~beta+20180518-1_amd64.deb
+libopus-dev
+http://ftp.us.debian.org/debian/pool/main/o/opus/libopus-dev_1.3-1_amd64.deb
