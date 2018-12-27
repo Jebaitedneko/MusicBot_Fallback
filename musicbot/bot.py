@@ -885,20 +885,20 @@ class MusicBot(discord.Client):
         await self._scheck_configs()
 
 
-    async def _scheck_ensure_env(self):
-        log.debug("Ensuring data folders exist")
-        for server in self.servers:
-            pathlib.Path('data/%s/' % server.id).mkdir(exist_ok=True)
+    #async def _scheck_ensure_env(self):
+        #log.debug("Ensuring data folders exist")
+        #for server in self.servers:
+            #pathlib.Path('data/%s/' % server.id).mkdir(exist_ok=True)
 
-        with open('data/server_names.txt', 'w', encoding='utf8') as f:
-            for server in sorted(self.servers, key=lambda s:int(s.id)):
-                f.write('{:<22} {}\n'.format(server.id, server.name))
+        #with open('data/server_names.txt', 'w', encoding='utf8') as f:
+            #for server in sorted(self.servers, key=lambda s:int(s.id)):
+                #f.write('{:<22} {}\n'.format(server.id, server.name))
 
-        if not self.config.save_videos and os.path.isdir(AUDIO_CACHE_PATH):
-            if self._delete_old_audiocache():
-                log.debug("Deleted old audio cache")
-            else:
-                log.debug("Could not delete old audio cache, moving on.")
+        #if not self.config.save_videos and os.path.isdir(AUDIO_CACHE_PATH):
+            #if self._delete_old_audiocache():
+                #log.debug("Deleted old audio cache")
+            #else:
+                #log.debug("Could not delete old audio cache, moving on.")
 
 
     async def _scheck_server_permissions(self):
