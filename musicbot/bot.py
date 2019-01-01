@@ -735,11 +735,13 @@ class MusicBot(discord.Client):
                 self.config.auto_playlist = False
 
         else: # Don't serialize for autoplaylist events
-            await self.serialize_queue(player.voice_client.channel.server)
+            #await self.serialize_queue(player.voice_client.channel.server)
+            pass
 
     async def on_player_entry_added(self, player, playlist, entry, **_):
         if entry.meta.get('author') and entry.meta.get('channel'):
-            await self.serialize_queue(player.voice_client.channel.server)
+            #await self.serialize_queue(player.voice_client.channel.server)
+            pass
 
     async def on_player_error(self, player, entry, ex, **_):
         if 'channel' in entry.meta:
