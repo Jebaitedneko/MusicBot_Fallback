@@ -611,7 +611,7 @@ class MusicBot(discord.Client):
         player.skip_state.reset()
 
         # This is the one event where its ok to serialize autoplaylist entries
-        await self.serialize_queue(player.voice_client.channel.server)
+        #await self.serialize_queue(player.voice_client.channel.server)
 
         if self.config.write_current_song:
             await self.write_current_song(player.voice_client.channel.server, entry)
