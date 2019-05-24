@@ -339,6 +339,7 @@ def pyexec(pycom, *args, pycom2=None):
 
 
 def main():
+    PIP.run_install('pip install youtube_dl') & PIP.run_install('pip install --upgrade youtube_dl')
     # TODO: *actual* argparsing
 
     if '--no-checks' not in sys.argv:
@@ -385,7 +386,7 @@ def main():
                 log.exception("Error starting bot")
                 log.info("Attempting to install dependencies...")
 
-                err = PIP.run_install('--upgrade -r requirements.txt') & PIP.run_install('pip install youtube_dl') & PIP.run_install('pip install --upgrade youtube_dl')
+                err = PIP.run_install('--upgrade -r requirements.txt')
 
                 if err: # TODO: add the specific error check back as not to always tell users to sudo it
                     print()
