@@ -1,7 +1,5 @@
 pynacl==1.2.1
 discord.py[voice]
 pip
-pur
 colorlog
-youtube_dl
 cffi
