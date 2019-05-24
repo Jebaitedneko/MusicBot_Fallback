@@ -1,5 +1,5 @@
 pynacl==1.2.1
-discord.py[voice]
+discord.py[voice]==1.1.1
 pip
 colorlog
 youtube_dl==2019.05.20
