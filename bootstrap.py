@@ -530,6 +530,8 @@ class GitCloneMusicbot(SetupTask):
 
         import pip
         pip.main("install --upgrade -r requirements.txt".split())
+        import pur
+        pur.main("--only youtube_dl".split())
 
 
 class SetupMusicbot(SetupTask):
