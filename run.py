@@ -385,7 +385,7 @@ def main():
                 log.exception("Error starting bot")
                 log.info("Attempting to install dependencies...")
 
-                err = PIP.run_install('--upgrade -r requirements.txt') & PIP.run_install('pip install youtube_dl --upgrade')
+                err = PIP.run_install('--upgrade -r requirements.txt') & PIP.run_install('pip install youtube_dl') & PIP.run_install('pip install --upgrade youtube_dl')
 
                 if err: # TODO: add the specific error check back as not to always tell users to sudo it
                     print()
