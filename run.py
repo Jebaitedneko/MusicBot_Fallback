@@ -341,8 +341,6 @@ def pyexec(pycom, *args, pycom2=None):
 def main():
     
     # TODO: *actual* argparsing
-    PIP.run_install('pip install youtube_dl')
-    PIP.run_install('pip install --upgrade youtube_dl')
 
     if '--no-checks' not in sys.argv:
         sanity_checks()
